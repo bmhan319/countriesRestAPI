@@ -13,9 +13,19 @@
 }
 
 .modeText {
+  position: relative;
   font-size: .85em;
 }
 
 .modeText::before {
-  content:"hi"
+  position: absolute;
+  background-image: url('./../img/moon.svg');
+  background-repeat: no-repeat;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: #fff;
 }
