@@ -1,0 +1,21 @@
+.headerContainer {
+  width: 100%;
+  padding: 28px 16px;
+  background-color: var(--DarkBlue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--White);
+}
+
+.headerTitle {
+  font-size: 1em;
+}
+
+.modeText {
+  font-size: .85em;
+}
+
+.modeText::before {
+  content:"hi"
+}

@@ -7,6 +7,12 @@
   --VeryDarkBlue: hsl(200, 15%, 8%);  /* (Light Mode Text) */
   --DarkGray: hsl(0, 0%, 52%);        /* (Light Mode Input) */
   --VeryLightGray: hsl(0, 0%, 98%);   /* (Light Mode Background) */
+
+  /* Typography */
+  /* MainPage */
+  --MainSize: 14px;
+  /* Details Page */
+  --DetailsSize: 16px;
 }
 
 *{
@@ -16,8 +22,8 @@
 }
 
 body {
+  width: 100%;
   font-family: 'Nunito Sans', sans-serif;
-  font-size: 14px;
+  font-size: var(--MainSize);
   background-color: var(--VeryDarkBlue);
-  color: var(--White);
 }

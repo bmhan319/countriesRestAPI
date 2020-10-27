@@ -1,10 +1,16 @@
 import React, {Component} from 'react'
+import Header from './components/Header'
+import './css/header.css'
 
 class App extends Component {
+  state = {
+    isDark: false,
+  }
+
   render(){
     return (
       <div className="App">
-        <h1>hiq</h1>
+        <Header />
       </div>
     )
   }
