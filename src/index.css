@@ -1,3 +1,14 @@
+:root {
+  /* Colors */
+  /* Neutral */
+  --DarkBlue: hsl(209, 23%, 22%);     /* (Dark Mode Elements) */
+  --VeryDarkBlue: hsl(207, 26%, 17%); /* (Dark Mode Background) */
+  --White: hsl(0, 0%, 100%);          /* (Dark Mode Text & Light Mode Elements) */
+  --VeryDarkBlue: hsl(200, 15%, 8%);  /* (Light Mode Text) */
+  --DarkGray: hsl(0, 0%, 52%);        /* (Light Mode Input) */
+  --VeryLightGray: hsl(0, 0%, 98%);   /* (Light Mode Background) */
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -6,4 +17,7 @@
 
 body {
   font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  background-color: var(--VeryDarkBlue);
+  color: var(--White);
 }
