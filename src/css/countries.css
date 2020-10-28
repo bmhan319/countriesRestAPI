@@ -5,6 +5,7 @@
 
 .countriesList {
   list-style: none;
+  margin-top: 24px;
 }
 
 .countryItem {

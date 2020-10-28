@@ -7,6 +7,7 @@
   width: 50%;
   min-width: 250px;
   cursor: pointer;
+  position: relative;
 }
 
 .regionHeader {
@@ -16,6 +17,7 @@
   border-radius: 6px;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .regionHeader:hover {
@@ -36,6 +38,8 @@
   background-color: var(--DarkBlue);
   border-radius: 6px;
   display: none;
+  position: absolute;
+  width:100%;
 }
 
 .region {
