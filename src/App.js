@@ -16,27 +16,34 @@ class App extends Component {
     searchValue: ""
   }
 
-  handleSearch = (e) => {
+  handleSearchInput = (e) => {
     e.preventDefault()
     this.setState({
       searchValue: e.target.value
     })
   }
 
-  handleSubmit = (e) => {
+  handleInputSubmit = (e) => {
     e.preventDefault()
-    this.callApi('name/' + this.state.searchValue)
+    this.callApi('name/', this.state.searchValue)
   }
 
-  callApi = async (searchType) => {
-    const link = 'https://restcountries.eu/rest/v2/' + searchType
+  handleFilterSubmit = (region) => {
+    document.querySelector('.regionOptions').style = "none"
+    this.setState({
+      filterOpen: false
+    })
+    this.callApi('region/', region)
+  }
+
+  callApi = async (type, val) => {
+    const link = 'https://restcountries.eu/rest/v2/' + type + val
     const call = await fetch(link)
     const data = await call.json()
     this.setState({
       countries: data,
-      filterOpen: false
     })
-    document.querySelector('.regionOptions').style = "none"
+    console.log(this.state.countries)
   }
 
   filterExpand = () => {
@@ -55,7 +62,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.callApi('all')
+    this.callApi('all','')
   }
 
   render(){
@@ -63,8 +70,8 @@ class App extends Component {
       <div className="App">
         <Header />
         <div className="inputContainer">
-          <Search  handleSearch={this.handleSearch} handleSubmit={this.handleSubmit} />
-          <Region call={this.callApi} filter={this.filterExpand} />
+          <Search  inputSearch={this.handleSearchInput} inputSubmit={this.handleInputSubmit} />
+          <Region filterSubmit={this.handleFilterSubmit} filter={this.filterExpand} />
         </div>
         <Countries state={this.state}/>
       </div>
