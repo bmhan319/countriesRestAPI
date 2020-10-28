@@ -6,7 +6,7 @@ export default function Region(props) {
       <div className="regionForm">
 
         <div className="regionHeader" onClick={props.filter} >
-          <p className="regionTitle">Filter By Region</p>
+          <p className="regionTitle">Filter by Region</p>
           <div className="regionIcon"></div>
         </div>
 
