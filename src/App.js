@@ -25,14 +25,15 @@ class App extends Component {
     console.log(this.state)
   }
 
-  filter = () => {
+  filterExpand = () => {
+    const element = document.querySelector('.regionOptions').style
     if (this.state.filterOpen === false) {
-      document.querySelector('.regionOptions').style.display="block"
+      element.display = "block"
       this.setState({
         filterOpen: true
       })
     } else {
-      document.querySelector('.regionOptions').style.display="none"
+      element.display = "none"
       this.setState({
         filterOpen: false
       })
@@ -49,7 +50,7 @@ class App extends Component {
         <Header />
         <div className="inputContainer">
           <Search />
-          <Region call={this.callApi} filter={this.filter} />
+          <Region call={this.callApi} filter={this.filterExpand} />
         </div>
         <Countries state={this.state}/>
       </div>
