@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import Header from './components/Header'
+import Search from './components/Search'
 import './css/header.css'
+import './css/search.css'
 
 class App extends Component {
   state = {
@@ -11,6 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <Search />
       </div>
     )
   }
