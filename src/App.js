@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
 import Header from './components/Header'
 import Search from './components/Search'
+import Region from './components/Region'
 import './css/header.css'
 import './css/search.css'
+import './css/region.css'
 
 class App extends Component {
   state = {
@@ -14,6 +16,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Search />
+        <Region />
       </div>
     )
   }
