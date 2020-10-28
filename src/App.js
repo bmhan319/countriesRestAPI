@@ -20,8 +20,10 @@ class App extends Component {
     const call = await fetch(link)
     const data = await call.json()
     this.setState({
-      countries: data
+      countries: data,
+      filterOpen: false
     })
+    document.querySelector('.regionOptions').style = "none"
     console.log(this.state)
   }
 
