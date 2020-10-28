@@ -12,11 +12,24 @@ class App extends Component {
   state = {
     isDark: false,
     filterOpen: false,
-    countries: []
+    countries: [],
+    searchValue: ""
   }
 
-  callApi = async (region) => {
-    const link = 'https://restcountries.eu/rest/v2/' + region
+  handleSearch = (e) => {
+    e.preventDefault()
+    this.setState({
+      searchValue: e.target.value
+    })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.callApi('name/' + this.state.searchValue)
+  }
+
+  callApi = async (searchType) => {
+    const link = 'https://restcountries.eu/rest/v2/' + searchType
     const call = await fetch(link)
     const data = await call.json()
     this.setState({
@@ -24,7 +37,6 @@ class App extends Component {
       filterOpen: false
     })
     document.querySelector('.regionOptions').style = "none"
-    console.log(this.state)
   }
 
   filterExpand = () => {
@@ -51,7 +63,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <div className="inputContainer">
-          <Search />
+          <Search  handleSearch={this.handleSearch} handleSubmit={this.handleSubmit} />
           <Region call={this.callApi} filter={this.filterExpand} />
         </div>
         <Countries state={this.state}/>
