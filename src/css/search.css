@@ -9,6 +9,7 @@
   border-radius: 6px;
   display: flex;
   padding-left:16px;
+  align-items: center;
 }
 
 .searchIcon {
@@ -39,4 +40,8 @@
 
 .searchInput::placeholder {
   color: var(--White);
+}
+
+.searchInput:hover::placeholder {
+  color:var(--DarkGray);
 }
