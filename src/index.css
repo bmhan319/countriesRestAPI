@@ -28,3 +28,7 @@ body {
   font-size: var(--MainSize);
   background-color: var(--VeryDarkBlue);
 }
+
+img {
+  display: block;
+}

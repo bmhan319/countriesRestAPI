@@ -5,13 +5,15 @@ export default function Countries(props) {
     <div className="countriesContainer">
       <ul className="countriesList">
         { props.state.countries.map(country => (
-          <li key={country.numericCode}>
-            <div className="flag">{country.flag}</div>
+          <li className="countryItem" key={country.numericCode}>
+            <div className="flagContainer">
+              <img className="flagImg" src={country.flag} alt={country.flag} />
+            </div>
             <div className="countryInfoContainer">
-              <h2 className="countryName">{country.nativeName}</h2>
-              <p className="population">{country.population}</p>
-              <p className="region">{country.region}</p>
-              <p className="capital">{country.capital}</p>
+              <h2 className="countryName">{country.name}</h2>
+              <p className="countryText population"><span className="countrySubject">Population: </span>{ (country.population).toLocaleString() }</p>
+              <p className="countryText region"><span className="countrySubject">Region: </span>{country.region}</p>
+              <p className="countryText capital"><span className="countrySubject">Capital: </span>{country.capital}</p>
             </div>
           </li>
         )) }
