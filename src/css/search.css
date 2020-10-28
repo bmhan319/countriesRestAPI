@@ -13,21 +13,28 @@
 
 .searchIcon {
   width: 50px;
-  height: 48px;
+  height: 100%;
   background-image: url('../img/135-search.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 1.25em;
+  background-size: 1.15em;
 }
 
 .searchInput {
   width: 100%;
-  height: 48px;
+  height: 46px;
   border-radius: 6px;
   border: 0;
   background-color: var(--DarkBlue);
   padding-left: 16px; 
-  color: var(--White)
+  color: var(--White);
+  font-weight: 300;
+  font-size: .85em;
+  outline: none;
+}
+
+.searchForm:focus-within {
+  border: 1px dotted var(--White);
 }
 
 .searchInput::placeholder {
