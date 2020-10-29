@@ -21,7 +21,12 @@ class Main extends Component {
 
   handleInputSubmit = (e) => {
     e.preventDefault()
-    this.callApi('name/', this.state.searchValue)
+    if (this.state.searchValue === "" ) {
+      console.log('error')
+    } else {
+      this.callApi('name/', this.state.searchValue)
+    }
+    
   }
 
   handleFilterSubmit = (region) => {
@@ -35,14 +40,20 @@ class Main extends Component {
   callApi = async (type, val) => {
     const link = 'https://restcountries.eu/rest/v2/' + type + val
     const linkAll = 'https://restcountries.eu/rest/v2/all'
+    const callAll = await fetch(linkAll)
+    const dataAll = await callAll.json()
     const call = await fetch(link)
-    const call2 = await fetch(linkAll)
     const data = await call.json()
-    const dataAll = await call2.json()
-    this.setState({
-      countries: data,
-      countriesAll: dataAll
-    })
+
+    if (data.status > 400) {
+      console.log('error')
+    } else {
+      this.setState({
+        countries: data,
+        countriesAll: dataAll
+      })
+    }
+    
   }
 
   filterExpand = () => {

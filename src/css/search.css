@@ -24,7 +24,8 @@
 .searchInput {
   width: 100%;
   height: 46px;
-  border-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
   border: 0;
   background-color: var(--DarkBlue);
   padding-left: 16px; 
@@ -44,4 +45,11 @@
 
 .searchInput:hover::placeholder {
   color:var(--DarkGray);
+}
+
+.searchInput:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0 60px var(--DarkBlue) inset !important;
+    /*use inset box-shadow to cover background-color*/
+    -webkit-text-fill-color: var(--White) !important;
+    /*use text fill color to cover font color*/
 }
