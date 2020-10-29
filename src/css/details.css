@@ -33,11 +33,11 @@
 
 .detailsFlagContainer {
   padding: 24px 24px 38px;
+  bordeR: 1px solid var(--VeryDarkBlue);
 }
 
 .detailsFlagImg {
   width: 100%;
-  height: 100%; 
 }
 
 .detailsCountryInfoContainer {
