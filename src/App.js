@@ -1,82 +1,22 @@
-import React, {Component} from 'react'
+import React from 'react'
+import {Route, Switch} from 'react-router-dom'
 import Header from './components/Header'
-import Search from './components/Search'
-import Region from './components/Region'
-import Countries from './components/Countries'
+import Main from './components/Main'
+import Details from './components/Details'
 import './css/header.css'
+import './css/details.css'
 import './css/search.css'
 import './css/region.css'
 import './css/countries.css'
 
-class App extends Component {
-  state = {
-    isDark: false,
-    filterOpen: false,
-    countries: [],
-    searchValue: ""
-  }
-
-  handleSearchInput = (e) => {
-    e.preventDefault()
-    this.setState({
-      searchValue: e.target.value
-    })
-  }
-
-  handleInputSubmit = (e) => {
-    e.preventDefault()
-    this.callApi('name/', this.state.searchValue)
-  }
-
-  handleFilterSubmit = (region) => {
-    document.querySelector('.regionOptions').style = "none"
-    this.setState({
-      filterOpen: false
-    })
-    this.callApi('region/', region)
-  }
-
-  callApi = async (type, val) => {
-    const link = 'https://restcountries.eu/rest/v2/' + type + val
-    const call = await fetch(link)
-    const data = await call.json()
-    this.setState({
-      countries: data,
-    })
-    console.log(this.state.countries)
-  }
-
-  filterExpand = () => {
-    const element = document.querySelector('.regionOptions').style
-    if (this.state.filterOpen === false) {
-      element.display = "block"
-      this.setState({
-        filterOpen: true
-      })
-    } else {
-      element.display = "none"
-      this.setState({
-        filterOpen: false
-      })
-    }
-  }
-
-  componentDidMount() {
-    this.callApi('all','')
-  }
-
-  render(){
-    return (
-      <div className="App">
-        <Header />
-        <div className="inputContainer">
-          <Search  inputSearch={this.handleSearchInput} inputSubmit={this.handleInputSubmit} />
-          <Region filterSubmit={this.handleFilterSubmit} filter={this.filterExpand} />
-        </div>
-        <Countries state={this.state}/>
-      </div>
-    )
-  }
+export default function App() {
+  return (
+    <div className="App">
+      <Header />
+      <Switch>
+        <Route exact path='/' component={Main} />
+        <Route path='/details' component={Details} />
+      </Switch>
+    </div>
+  )
 }
-
-export default App;

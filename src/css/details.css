@@ -1,0 +1,22 @@
+.backButtonContainer {
+  width: 100%;
+  padding: 36px 24px;
+}
+
+.backButton {
+  height: 32px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--DarkBlue);
+  color: var(--White);
+  border: 0;
+  box-shadow:  0 0 10px 2px #000;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.leftArrow {
+  margin-right: 8px;
+}

@@ -1,5 +1,4 @@
 .countriesContainer {
-  color: var(--White);
   padding: 0 14.667%;
 }
 
@@ -10,6 +9,11 @@
 
 .countryItem {
   margin-bottom: 32px;
+}
+
+.countryLink {
+  color: var(--White);
+  text-decoration: none;
 }
 
 .flagImg {
@@ -31,7 +35,7 @@
 }
 
 .countryText {
-  font-size: .85em;
+  font-size: .9em;
   font-weight: 300;
   letter-spacing: .05em;
   margin-bottom: 8px;
