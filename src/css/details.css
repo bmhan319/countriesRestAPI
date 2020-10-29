@@ -20,3 +20,11 @@
 .leftArrow {
   margin-right: 8px;
 }
+
+.detailsFlagContainer {
+  padding: 24px 24px;
+}
+
+.detailsFlagImg {
+  width: 100%;
+}
