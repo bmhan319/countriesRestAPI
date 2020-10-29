@@ -15,11 +15,11 @@ class Details extends Component {
   addBorderCountries = () => {
     const country = this.props.location.countryData.borders
     const countryAll = this.props.location.state.countriesAll
-    let border =[]
+    let border = []
     country.forEach( item => {
       for (let i = 0; i < countryAll.length; i++) {
         if (item === countryAll[i].alpha3Code) {
-          border.push(countryAll[i].name)
+          border.push([countryAll[i].name, countryAll[i]])
         }
       }
     } )
@@ -28,8 +28,6 @@ class Details extends Component {
   
   render() {
     const country = this.props.location.countryData
-    //console.log(this.props.location.state.countriesAll[0].alpha3Code)
-    //console.log(this.props.location.state.countriesAll[0].name)
     return (
       <div>
 
@@ -58,7 +56,13 @@ class Details extends Component {
             <h3 className="detailsBorderName">Border Countries:</h3>
           <div className="detailsBorderContainer borders">
             {this.addBorderCountries().map( (border,ind) => (
-              <div className="borderCountry" key={ind}>{border} </div>
+              <NavLink className="countryLink" key={ind} to={{
+                pathname: '/details',
+                countryData: border[1],
+                state: this.props.location.state
+              }}>
+                <div className="borderCountry">{border[0]}</div>
+              </NavLink>
             ))}
           </div>
         </div>

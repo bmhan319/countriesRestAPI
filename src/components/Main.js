@@ -43,7 +43,6 @@ class Main extends Component {
       countries: data,
       countriesAll: dataAll
     })
-    console.log(this.state.countriesAll)
   }
 
   filterExpand = () => {
