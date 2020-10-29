@@ -21,7 +21,7 @@ class Details extends Component {
       <div>
 
         <div className="backButtonContainer">
-          <NavLink className="" to='/'>
+          <NavLink className="backButtonLink" to='/'>
             <button className="backButton"><img className="leftArrow" src={Arrow} alt="left-arrow" />Back</button>
           </NavLink>
         </div>

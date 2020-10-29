@@ -12,9 +12,13 @@
   background-color: var(--DarkBlue);
   color: var(--White);
   border: 0;
-  box-shadow:  0 0 10px 2px #000;
+  box-shadow:  0 0 6px 4px #000;
   border-radius: 2px;
   cursor: pointer;
+}
+
+.backButtonLink {
+  text-decoration: none;
 }
 
 .leftArrow {
