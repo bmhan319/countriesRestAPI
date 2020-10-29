@@ -6,11 +6,14 @@ class Details extends Component {
   getLanguages = () => {
     const country = this.props.location.countryData
     let languages = []
-
     country.languages.forEach( language => {
       languages.push(language.name)
     } )
     return languages.join(', ')
+  }
+
+  addBorderCountries = () => {
+    console.log("hi")
   }
 
   
@@ -41,12 +44,12 @@ class Details extends Component {
           <p className="detailsCountryText toplevelDomain"><span className="detailsCountrySubject">Top Level Domain: </span>{country.topLevelDomain}</p>
           <p className="detailsCountryText currencies"><span className="detailsCountrySubject">Currencies: </span>{country.currencies[0].name}</p>
           <p className="detailsCountryText languages"><span className="detailsCountrySubject">Languages: </span>{this.getLanguages()}</p>
-          <h3 className="detailsBorderName">Border Countries:</h3>
+          
+            <h3 className="detailsBorderName">Border Countries:</h3>
           <div className="detailsBorderContainer borders">
-            <span className="borderCountry">{country.borders[0]} </span>
-            <span className="borderCountry">{country.borders[1]} </span>
-            <span className="borderCountry">{country.borders[2]} </span>
-            <span className="borderCountry">{country.borders[3]}</span>
+            {country.borders.map( (border,ind) => (
+              <div className="borderCountry" key={ind}>{border} </div>
+            ))}
           </div>
         </div>
 

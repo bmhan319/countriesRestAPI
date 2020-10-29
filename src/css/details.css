@@ -39,7 +39,7 @@
 }
 
 .detailsCountryInfoContainer {
-  padding-left: 24px; 
+  padding:0 24px; 
 }
 
 .detailsCountryName {
@@ -71,12 +71,15 @@
 }
 
 .detailsBorderContainer {
-  height: 30px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .borderCountry {
+  height: 30px;
   background-color: var(--DarkBlue);
-  margin-right: 8px;
+  margin: 0 8px 8px 0;
   padding: 7px 24px;
   font-size: .7em;
+
 }
