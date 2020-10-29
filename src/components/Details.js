@@ -43,18 +43,18 @@ class Details extends Component {
 
         <div className="detailsCountryInfoContainer">
           <h2 className="detailsCountryName">{country.name}</h2>
-          <p className="detailsCountryText native"><span className="detailsCountrySubject">Native Name: </span>{ (country.nativeName).toLocaleString() }</p>
-          <p className="detailsCountryText population"><span className="countrySubject">Population: </span>{ (country.population).toLocaleString() }</p>
-          <p className="detailsCountryText region"><span className="detailsCountrySubject">Region: </span>{country.region}</p>
-          <p className="detailsCountryText subregion"><span className="detailsCountrySubject">Sub Region: </span>{country.subregion}</p>
-          <p className="detailsCountryText capital"><span className="detailsCountrySubject">Capital: </span>{country.capital}</p>
+          <p className="detailsCountryText"><span className="detailsCountrySubject">Native Name: </span>{ (country.nativeName).toLocaleString() }</p>
+          <p className="detailsCountryText"><span className="countrySubject">Population: </span>{ (country.population).toLocaleString() }</p>
+          <p className="detailsCountryText"><span className="detailsCountrySubject">Region: </span>{country.region}</p>
+          <p className="detailsCountryText"><span className="detailsCountrySubject">Sub Region: </span>{country.subregion}</p>
+          <p className="detailsCountryText detailsCapital"><span className="detailsCountrySubject">Capital: </span>{country.capital}</p>
           <br/>
-          <p className="detailsCountryText toplevelDomain"><span className="detailsCountrySubject">Top Level Domain: </span>{country.topLevelDomain}</p>
-          <p className="detailsCountryText currencies"><span className="detailsCountrySubject">Currencies: </span>{country.currencies[0].name}</p>
-          <p className="detailsCountryText languages"><span className="detailsCountrySubject">Languages: </span>{this.getLanguages()}</p>
+          <p className="detailsCountryText"><span className="detailsCountrySubject">Top Level Domain: </span>{country.topLevelDomain}</p>
+          <p className="detailsCountryText"><span className="detailsCountrySubject">Currencies: </span>{country.currencies[0].name}</p>
+          <p className="detailsCountryText detailsLanguages"><span className="detailsCountrySubject">Languages: </span>{this.getLanguages()}</p>
           
             <h3 className="detailsBorderName">Border Countries:</h3>
-          <div className="detailsBorderContainer borders">
+          <div className="detailsBorderContainer">
             {this.addBorderCountries().map( (border,ind) => (
               <NavLink className="countryLink" key={ind} to={{
                 pathname: '/details',

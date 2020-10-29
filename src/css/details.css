@@ -15,10 +15,16 @@
   box-shadow:  0 0 6px 4px #000;
   border-radius: 2px;
   cursor: pointer;
+  outline: none;
+}
+
+.backButton:focus {
+  border: 1px dotted var(--White);
 }
 
 .backButtonLink {
   text-decoration: none;
+  outline: none;
 }
 
 .leftArrow {
@@ -56,11 +62,11 @@
   font-weight: 600;
 }
 
-.capital {
+.detailsCapital {
   margin-bottom: 22px;
 }
 
-.languages {
+.detailsLanguages {
   margin-bottom: 36px;
 }
 
@@ -85,9 +91,18 @@
   font-size: .8em;
   box-shadow: 0 0 6px 4px #000;
   border-radius: 2px;
+  outline: none;
 }
 
 .backButton:hover,
 .borderCountry:hover {
   filter: brightness(150%);
+}
+
+.countryLink {
+  outline:none;
+}
+
+.countryLink:focus > .borderCountry {
+  border: 1px dotted var(--White);
 }

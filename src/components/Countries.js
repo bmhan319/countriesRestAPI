@@ -17,9 +17,9 @@ export default function Countries(props) {
             </div>
             <div className="countryInfoContainer">
               <h2 className="countryName">{country.name}</h2>
-              <p className="countryText population"><span className="countrySubject">Population: </span>{ (country.population).toLocaleString() }</p>
-              <p className="countryText region"><span className="countrySubject">Region: </span>{country.region}</p>
-              <p className="countryText capital"><span className="countrySubject">Capital: </span>{country.capital}</p>
+              <p className="countryText"><span className="countrySubject">Population: </span>{ (country.population).toLocaleString() }</p>
+              <p className="countryText"><span className="countrySubject">Region: </span>{country.region}</p>
+              <p className="countryText"><span className="countrySubject">Capital: </span>{country.capital}</p>
             </div>
             </NavLink>
           </li>
