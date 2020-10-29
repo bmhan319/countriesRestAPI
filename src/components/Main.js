@@ -8,6 +8,7 @@ class Main extends Component {
     isDark: false,
     filterOpen: false,
     countries: [],
+    countriesAll:[],
     searchValue: ""
   }
 
@@ -33,12 +34,16 @@ class Main extends Component {
 
   callApi = async (type, val) => {
     const link = 'https://restcountries.eu/rest/v2/' + type + val
+    const linkAll = 'https://restcountries.eu/rest/v2/all'
     const call = await fetch(link)
+    const call2 = await fetch(linkAll)
     const data = await call.json()
+    const dataAll = await call2.json()
     this.setState({
       countries: data,
+      countriesAll: dataAll
     })
-    console.log(this.state.countries)
+    console.log(this.state.countriesAll)
   }
 
   filterExpand = () => {
@@ -59,6 +64,7 @@ class Main extends Component {
   componentDidMount() {
     this.callApi('all','')
   }
+
 
   render(){
     return (

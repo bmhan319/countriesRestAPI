@@ -13,13 +13,23 @@ class Details extends Component {
   }
 
   addBorderCountries = () => {
-    console.log("hi")
+    const country = this.props.location.countryData.borders
+    const countryAll = this.props.location.state.countriesAll
+    let border =[]
+    country.forEach( item => {
+      for (let i = 0; i < countryAll.length; i++) {
+        if (item === countryAll[i].alpha3Code) {
+          border.push(countryAll[i].name)
+        }
+      }
+    } )
+    return border
   }
-
-  
   
   render() {
     const country = this.props.location.countryData
+    //console.log(this.props.location.state.countriesAll[0].alpha3Code)
+    //console.log(this.props.location.state.countriesAll[0].name)
     return (
       <div>
 
@@ -47,7 +57,7 @@ class Details extends Component {
           
             <h3 className="detailsBorderName">Border Countries:</h3>
           <div className="detailsBorderContainer borders">
-            {country.borders.map( (border,ind) => (
+            {this.addBorderCountries().map( (border,ind) => (
               <div className="borderCountry" key={ind}>{border} </div>
             ))}
           </div>

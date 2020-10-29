@@ -9,7 +9,8 @@ export default function Countries(props) {
           <li className="countryItem" key={ind}>
             <NavLink className="countryLink" to={{
               pathname: '/details',
-              countryData: country
+              countryData: country,
+              state: props.state
             }}>
             <div className="flagContainer">
               <img className="flagImg" src={country.flag} alt={country.flag} />
