@@ -1,11 +1,9 @@
 .headerContainer {
   width: 100%;
   padding: 30px 16px;
-  background-color: var(--DarkBlue);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--White);
 }
 
 .headerTitle {
@@ -20,7 +18,6 @@
 
 .modeText::before {
   position: absolute;
-  background-image: url('./../img/moon.svg');
   background-repeat: no-repeat;
   content: "";
   height: 12px;
@@ -28,5 +25,12 @@
   left: -16px;
   top: 50%;
   transform: translateY(-50%);
-  fill: var(--White);
+}
+
+.moonDark::before {
+  background-image: url('./../img/moon.svg');
+}
+
+.moonLight::before {
+  background-image: url('./../img/moon-outline.svg');
 }

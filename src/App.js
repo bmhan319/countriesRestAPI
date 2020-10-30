@@ -88,7 +88,41 @@ class App extends Component {
   }
 
   darkModeToggle = () => {
-    console.log("hi")
+    if (this.state.isDark === false) {
+      console.log("light")
+      document.getElementById('mainContainer').classList.add('lightBg')
+      document.getElementById('mainContainer').classList.remove('darkBg')
+      document.getElementById('headerContainer').classList.add('lightElem', 'lightText', 'lightBoxShadow')
+      document.getElementById('headerContainer').classList.remove('darkElem', 'darkText', 'darkBoxShadow')
+      document.getElementById('modeText').classList.add('moonLight')
+      document.getElementById('modeText').classList.remove('moonDark')
+      document.getElementById('searchForm').classList.add('lightElem', 'lightText', 'lightBoxShadow', 'lightSearchForm')
+      document.getElementById('searchForm').classList.remove('darkElem', 'darkText', 'darkBoxShadow', 'darkSearchForm')
+      document.getElementById('searchIcon').classList.add('searchIconLight')
+      document.getElementById('searchIcon').classList.remove('searchIconDark')
+      document.getElementById('searchInput').classList.add('lightElem', 'lightText', 'lightSearchInput')
+      document.getElementById('searchInput').classList.remove('darkElem', 'darkText', 'darkSearchInput')
+      this.setState({
+        isDark: true
+      })
+    } else {
+      console.log("dark")
+      document.getElementById('mainContainer').classList.add('darkBg')
+      document.getElementById('mainContainer').classList.remove('lightBg')
+      document.getElementById('headerContainer').classList.add('darkElem', 'darkText', 'darkBoxShadow')
+      document.getElementById('headerContainer').classList.remove('lightElem', 'lightText', 'lightBoxShadow')
+      document.getElementById('modeText').classList.add('moonDark')
+      document.getElementById('modeText').classList.remove('moonLight')
+      document.getElementById('searchForm').classList.add('darkElem', 'darkText', 'darkBoxShadow', 'darkSearchForm')
+      document.getElementById('searchForm').classList.remove('lightElem', 'lightText', 'lightBoxShadow', 'lightSearchForm')
+      document.getElementById('searchIcon').classList.add('searchIconDark')
+      document.getElementById('searchIcon').classList.remove('searchIconLight')
+      document.getElementById('searchInput').classList.add('darkElem', 'darkText', 'darkSearchInput')
+      document.getElementById('searchInput').classList.remove('lightElem', 'lightText', 'lightSearchInput')
+      this.setState({
+        isDark: false
+      })
+    }
   }
 
   render() {
