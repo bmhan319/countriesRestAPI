@@ -15,6 +15,7 @@
 .modeText {
   position: relative;
   font-size: .85em;
+  cursor: pointer;
 }
 
 .modeText::before {
