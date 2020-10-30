@@ -20,9 +20,10 @@ class Main extends Component {
   }
 
   handleInputSubmit = (e) => {
+    this.errorReset()
     e.preventDefault()
     if (this.state.searchValue === "" ) {
-      console.log('error')
+      this.errorMessage()
     } else {
       this.callApi('name/', this.state.searchValue)
     }
@@ -30,6 +31,7 @@ class Main extends Component {
   }
 
   handleFilterSubmit = (region) => {
+    this.errorReset()
     document.querySelector('.regionOptions').style = "none"
     this.setState({
       filterOpen: false
@@ -46,7 +48,7 @@ class Main extends Component {
     const data = await call.json()
 
     if (data.status > 400) {
-      console.log('error')
+      this.errorMessage()
     } else {
       this.setState({
         countries: data,
@@ -69,6 +71,16 @@ class Main extends Component {
         filterOpen: false
       })
     }
+  }
+
+  errorMessage = () => {
+    document.querySelector('.searchForm').style.border = "1px solid red"
+    document.getElementById('searchContainer').classList.add("formAfter")
+  }
+
+  errorReset = () => {
+    document.querySelector('.searchForm').style.border = "0"
+    document.getElementById('searchContainer').classList.remove("formAfter")
   }
 
   componentDidMount() {

@@ -12,6 +12,13 @@
   align-items: center;
 }
 
+.formAfter::after {
+  content:"Please enter a valid country name";
+  color: red;
+  padding-left: 8px;
+  font-style: italic; 
+}
+
 .searchIcon {
   width: 50px;
   height: 100%;
