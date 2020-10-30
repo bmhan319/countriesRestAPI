@@ -3,6 +3,10 @@ import {NavLink} from 'react-router-dom'
 import Arrow from '../img/arrow-left.svg'
 
 class Details extends Component {
+  componentDidMount() {
+    this.props.location.changeStatePage('details')
+  }
+
   getLanguages = () => {
     const country = this.props.location.countryData
     let languages = []

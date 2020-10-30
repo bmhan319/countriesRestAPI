@@ -6,6 +6,7 @@ import Countries from './Countries'
 class Main extends Component {
   componentDidMount() {
     this.props.callApi('all','')
+    this.props.changeStatePage('main')
   }
     
   render(){
@@ -15,7 +16,7 @@ class Main extends Component {
           <Search  inputSearch={this.props.handleSearchInput} inputSubmit={this.props.handleInputSubmit} />
           <Region filterSubmit={this.props.handleFilterSubmit} filter={this.props.filterExpand} />
         </div>
-        <Countries state={this.props.parentState}/>
+        <Countries state={this.props.parentState} changeStatePage={this.props.changeStatePage}/>
       </div>
     )
   }

@@ -15,7 +15,8 @@ class App extends Component {
     filterOpen: false,
     countries: [],
     countriesAll:[],
-    searchValue: ""
+    searchValue: "",
+    page: ''
   }
 
   filterExpand = () => {
@@ -87,77 +88,97 @@ class App extends Component {
     document.getElementById('searchContainer').classList.remove("formAfter")
   }
 
+  changeStatePage = (name) => {
+    this.setState({
+      page: name
+    })
+  }
+
   darkModeToggle = () => {
-    if (this.state.isDark === false) {
-      console.log("light")
-      document.getElementById('mainContainer').classList.add('lightBg')
-      document.getElementById('mainContainer').classList.remove('darkBg')
-      document.getElementById('detailsContainer').classList.add('lightBg')
-      document.getElementById('detailsContainer').classList.remove('darkBg')
-      document.getElementById('headerContainer').classList.add('lightElem', 'lightText', 'lightBoxShadow')
-      document.getElementById('headerContainer').classList.remove('darkElem', 'darkText', 'darkBoxShadow')
-      document.getElementById('modeText').classList.add('moonLight')
-      document.getElementById('modeText').classList.remove('moonDark')
-      document.getElementById('searchForm').classList.add('lightElem', 'lightText', 'lightBoxShadow', 'lightSearchForm')
-      document.getElementById('searchForm').classList.remove('darkElem', 'darkText', 'darkBoxShadow', 'darkSearchForm')
-      document.getElementById('searchIcon').classList.add('searchIconLight')
-      document.getElementById('searchIcon').classList.remove('searchIconDark')
-      document.getElementById('searchInput').classList.add('lightElem', 'lightText', 'lightSearchInput')
-      document.getElementById('searchInput').classList.remove('darkElem', 'darkText', 'darkSearchInput')
-      document.getElementById('regionHeader').classList.add('lightElem', 'lightText', 'lightBoxShadow')
-      document.getElementById('regionHeader').classList.remove('darkElem', 'darkText', 'darkBoxShadow')
-      document.getElementById('regionIcon').classList.add('regionIconLight')
-      document.getElementById('regionIcon').classList.remove('regionIconDark')
-      document.getElementById('regionOptions').classList.add('lightElem', 'lightText', 'lightBoxShadow')
-      document.getElementById('regionOptions').classList.remove('darkElem', 'darkText', 'darkBoxShadow')
+    if (this.state.page === "main") {
+      if (this.state.isDark === false) {
+        console.log("light")
+        document.getElementById('mainContainer').classList.add('lightBg')
+        document.getElementById('mainContainer').classList.remove('darkBg')
+        document.getElementById('headerContainer').classList.add('lightElem', 'lightText', 'lightBoxShadow')
+        document.getElementById('headerContainer').classList.remove('darkElem', 'darkText', 'darkBoxShadow')
+        document.getElementById('modeText').classList.add('moonLight')
+        document.getElementById('modeText').classList.remove('moonDark')
+        document.getElementById('searchForm').classList.add('lightElem', 'lightText', 'lightBoxShadow', 'lightSearchForm')
+        document.getElementById('searchForm').classList.remove('darkElem', 'darkText', 'darkBoxShadow', 'darkSearchForm')
+        document.getElementById('searchIcon').classList.add('searchIconLight')
+        document.getElementById('searchIcon').classList.remove('searchIconDark')
+        document.getElementById('searchInput').classList.add('lightElem', 'lightText', 'lightSearchInput')
+        document.getElementById('searchInput').classList.remove('darkElem', 'darkText', 'darkSearchInput')
+        document.getElementById('regionHeader').classList.add('lightElem', 'lightText', 'lightBoxShadow')
+        document.getElementById('regionHeader').classList.remove('darkElem', 'darkText', 'darkBoxShadow')
+        document.getElementById('regionIcon').classList.add('regionIconLight')
+        document.getElementById('regionIcon').classList.remove('regionIconDark')
+        document.getElementById('regionOptions').classList.add('lightElem', 'lightText', 'lightBoxShadow')
+        document.getElementById('regionOptions').classList.remove('darkElem', 'darkText', 'darkBoxShadow')
 
-      document.querySelectorAll('.flagContainer').forEach( item => {
-        item.classList.add('lightBoxShadow')
-        item.classList.remove('darkBoxShadow')
-      } )
+        document.querySelectorAll('.flagContainer').forEach( item => {
+          item.classList.add('lightBoxShadow')
+          item.classList.remove('darkBoxShadow')
+        } )
 
-      document.querySelectorAll('.countryInfoContainer').forEach( item => {
-        item.classList.add('lightElem', 'lightText', 'lightBoxShadow')
-        item.classList.remove('darkElem', 'darkText', 'darkBoxShadow')
-      } )
-      this.setState({
-        isDark: true
-      })
-    } else {
-      console.log("dark")
-      document.getElementById('mainContainer').classList.add('darkBg')
-      document.getElementById('mainContainer').classList.remove('lightBg')
-      document.getElementById('detailsContainer').classList.add('darkBg')
-      document.getElementById('detailsContainer').classList.remove('lightBg')
-      document.getElementById('headerContainer').classList.add('darkElem', 'darkText', 'darkBoxShadow')
-      document.getElementById('headerContainer').classList.remove('lightElem', 'lightText', 'lightBoxShadow')
-      document.getElementById('modeText').classList.add('moonDark')
-      document.getElementById('modeText').classList.remove('moonLight')
-      document.getElementById('searchForm').classList.add('darkElem', 'darkText', 'darkBoxShadow', 'darkSearchForm')
-      document.getElementById('searchForm').classList.remove('lightElem', 'lightText', 'lightBoxShadow', 'lightSearchForm')
-      document.getElementById('searchIcon').classList.add('searchIconDark')
-      document.getElementById('searchIcon').classList.remove('searchIconLight')
-      document.getElementById('searchInput').classList.add('darkElem', 'darkText', 'darkSearchInput')
-      document.getElementById('searchInput').classList.remove('lightElem', 'lightText', 'lightSearchInput')
-      document.getElementById('regionHeader').classList.add('darkElem', 'darkText', 'darkBoxShadow')
-      document.getElementById('regionHeader').classList.remove('lightElem', 'lightText', 'lightBoxShadow')
-      document.getElementById('regionIcon').classList.add('regionIconDark')
-      document.getElementById('regionIcon').classList.remove('regionIconLight')
-      document.getElementById('regionOptions').classList.add('darkElem', 'darkText', 'darkBoxShadow')
-      document.getElementById('regionOptions').classList.remove('lightElem', 'lightText', 'lightBoxShadow')
+        document.querySelectorAll('.countryInfoContainer').forEach( item => {
+          item.classList.add('lightElem', 'lightText', 'lightBoxShadow')
+          item.classList.remove('darkElem', 'darkText', 'darkBoxShadow')
+        } )
+        this.setState({
+          isDark: true
+        })
+      } else {
+        console.log("dark")
+        document.getElementById('mainContainer').classList.add('darkBg')
+        document.getElementById('mainContainer').classList.remove('lightBg')
+        document.getElementById('headerContainer').classList.add('darkElem', 'darkText', 'darkBoxShadow')
+        document.getElementById('headerContainer').classList.remove('lightElem', 'lightText', 'lightBoxShadow')
+        document.getElementById('modeText').classList.add('moonDark')
+        document.getElementById('modeText').classList.remove('moonLight')
+        document.getElementById('searchForm').classList.add('darkElem', 'darkText', 'darkBoxShadow', 'darkSearchForm')
+        document.getElementById('searchForm').classList.remove('lightElem', 'lightText', 'lightBoxShadow', 'lightSearchForm')
+        document.getElementById('searchIcon').classList.add('searchIconDark')
+        document.getElementById('searchIcon').classList.remove('searchIconLight')
+        document.getElementById('searchInput').classList.add('darkElem', 'darkText', 'darkSearchInput')
+        document.getElementById('searchInput').classList.remove('lightElem', 'lightText', 'lightSearchInput')
+        document.getElementById('regionHeader').classList.add('darkElem', 'darkText', 'darkBoxShadow')
+        document.getElementById('regionHeader').classList.remove('lightElem', 'lightText', 'lightBoxShadow')
+        document.getElementById('regionIcon').classList.add('regionIconDark')
+        document.getElementById('regionIcon').classList.remove('regionIconLight')
+        document.getElementById('regionOptions').classList.add('darkElem', 'darkText', 'darkBoxShadow')
+        document.getElementById('regionOptions').classList.remove('lightElem', 'lightText', 'lightBoxShadow')
 
-      document.querySelectorAll('.flagContainer').forEach( item => {
-        item.classList.add('darkBoxShadow')
-        item.classList.remove('lightBoxShadow')
-      } )
+        document.querySelectorAll('.flagContainer').forEach( item => {
+          item.classList.add('darkBoxShadow')
+          item.classList.remove('lightBoxShadow')
+        } )
 
-      document.querySelectorAll('.countryInfoContainer').forEach( item => {
-        item.classList.add('darkElem', 'darkText', 'darkBoxShadow')
-        item.classList.remove('lightElem', 'lightText', 'lightBoxShadow')
-      } )
-      this.setState({
-        isDark: false
-      })
+        document.querySelectorAll('.countryInfoContainer').forEach( item => {
+          item.classList.add('darkElem', 'darkText', 'darkBoxShadow')
+          item.classList.remove('lightElem', 'lightText', 'lightBoxShadow')
+        } )
+        this.setState({
+          isDark: false
+        })
+      }
+    } else if (this.state.page === "details") {
+      if (this.state.isDark === false) {
+        console.log("light")
+        document.getElementById('detailsContainer').classList.add('lightBg')
+        document.getElementById('detailsContainer').classList.remove('darkBg')
+        this.setState({
+          isDark: true
+        })
+      } else {
+        console.log("dark")
+        document.getElementById('detailsContainer').classList.add('darkBg')
+        document.getElementById('detailsContainer').classList.remove('lightBg')
+        this.setState({
+          isDark: false
+        })
+      } 
     }
   }
 
@@ -171,6 +192,7 @@ class App extends Component {
                                                     handleFilterSubmit={this.handleFilterSubmit}
                                                     handleSearchInput={this.handleSearchInput}
                                                     handleInputSubmit={this.handleInputSubmit}
+                                                    changeStatePage={this.changeStatePage}
                                                     callApi={this.callApi} />} />
           <Route path='/details' component={Details} />
         </Switch>

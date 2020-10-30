@@ -10,7 +10,9 @@ export default function Countries(props) {
             <NavLink className="countryLink" to={{
               pathname: '/details',
               countryData: country,
+              changeStatePage: props.changeStatePage,
               state: props.state
+
             }}>
             <div className="flagContainer">
               <img className="flagImg" src={country.flag} alt={country.flag} />

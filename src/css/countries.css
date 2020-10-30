@@ -1,5 +1,6 @@
 .countriesContainer {
   padding: 0 14.667%;
+  border: 2px solid transparent;
 }
 
 .countriesList {
