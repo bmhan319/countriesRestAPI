@@ -5,12 +5,12 @@ export default function Region(props) {
     <div className="regionContainer">
       <div className="regionForm">
 
-        <div className="regionHeader" onClick={props.filter} >
+        <div id="regionHeader" className="regionHeader darkElem darkText darkBoxShadow" onClick={props.filter} >
           <p className="regionTitle">Filter by Region</p>
-          <div className="regionIcon"></div>
+          <div id="regionIcon" className="regionIcon regionIconDark"></div>
         </div>
 
-        <ul className="regionOptions">
+        <ul id="regionOptions" className="regionOptions darkElem darkText darkBoxShadow">
           <li className="region africa" onClick={ ()=>props.filterSubmit('africa') }>Africa</li>
           <li className="region america" onClick={ ()=>props.filterSubmit('americas') }>America</li>
           <li className="region asia" onClick={ ()=>props.filterSubmit('asia') }>Asia</li>

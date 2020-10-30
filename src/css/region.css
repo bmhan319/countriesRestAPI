@@ -3,7 +3,6 @@
 }
 
 .regionForm {
-  color: var(--White);
   width: 50%;
   min-width: 250px;
   cursor: pointer;
@@ -13,7 +12,6 @@
 .regionHeader {
   padding: 15px 24px;
   margin-bottom: 4px;
-  background-color: var(--DarkBlue);
   border-radius: 6px;
   display: flex;
   justify-content: space-between;
@@ -23,16 +21,23 @@
 }
 
 .regionHeader:hover {
-  color: var(--DarkGray);
+  color: var(--LightInput);
 }
 
 .regionIcon {
   height: 18px;
   width: 18px;
-  background-image: url('../img/324-circle-down.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 80%;
+}
+
+.regionIconDark {
+  background-image: url('../img/down-dark.svg');
+}
+
+.regionIconLight {
+  background-image: url('../img/down-light.svg');
 }
 
 .regionOptions {
@@ -40,7 +45,6 @@
   width: 100%;
   padding: 16px 24px;
   list-style: none;
-  background-color: var(--DarkBlue);
   border-radius: 6px;
   display: none;
 }
@@ -56,6 +60,6 @@
 }
 
 .region:hover {
-  color: var(--DarkGray);
+  color: var(--LightInput);
   cursor: pointer;
 }

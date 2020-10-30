@@ -12,7 +12,7 @@
   background-color: var(--DarkBlue);
   color: var(--White);
   border: 0;
-  box-shadow:  0 0 6px 4px #000;
+  box-shadow: 0 0 24px -8px #000;
   border-radius: 2px;
   cursor: pointer;
   outline: none;
@@ -33,7 +33,7 @@
 
 .detailsFlagContainer {
   padding: 24px 24px 38px;
-  bordeR: 1px solid var(--VeryDarkBlue);
+  bordeR: 1px solid transparent;
 }
 
 .detailsFlagImg {
@@ -46,6 +46,7 @@
 
 .detailsCountryInfoContainer {
   padding:0 24px; 
+  border: 2px solid transparent;
 }
 
 .detailsCountryName {
@@ -89,7 +90,7 @@
   margin: 0 8px 8px 0;
   padding: 7px 24px;
   font-size: .8em;
-  box-shadow: 0 0 6px 4px #000;
+  box-shadow: 0 0 24px -8px #000;
   border-radius: 2px;
   outline: none;
 }

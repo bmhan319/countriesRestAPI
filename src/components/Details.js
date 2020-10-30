@@ -29,7 +29,7 @@ class Details extends Component {
   render() {
     const country = this.props.location.countryData
     return (
-      <div>
+      <div id="detailsContainer" className="darkBg">
 
         <div className="backButtonContainer">
           <NavLink className="backButtonLink" to='/'>

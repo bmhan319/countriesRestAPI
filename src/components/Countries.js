@@ -15,7 +15,7 @@ export default function Countries(props) {
             <div className="flagContainer">
               <img className="flagImg" src={country.flag} alt={country.flag} />
             </div>
-            <div className="countryInfoContainer">
+            <div className="countryInfoContainer darkElem darkText">
               <h2 className="countryName">{country.name}</h2>
               <p className="countryText"><span className="countrySubject">Population: </span>{ (country.population).toLocaleString() }</p>
               <p className="countryText"><span className="countrySubject">Region: </span>{country.region}</p>

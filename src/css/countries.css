@@ -11,8 +11,7 @@
   margin-bottom: 32px;
 }
 
-.countryLink {
-  color: var(--White);
+.countryLink {  
   text-decoration: none;
 }
 
@@ -24,7 +23,6 @@
 
 .countryInfoContainer {
   padding: 24px;
-  background-color: var(--DarkBlue);
   border-bottom-left-radius: 6px; 
   border-bottom-right-radius: 6px;
 }

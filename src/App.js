@@ -92,6 +92,8 @@ class App extends Component {
       console.log("light")
       document.getElementById('mainContainer').classList.add('lightBg')
       document.getElementById('mainContainer').classList.remove('darkBg')
+      document.getElementById('detailsContainer').classList.add('lightBg')
+      document.getElementById('detailsContainer').classList.remove('darkBg')
       document.getElementById('headerContainer').classList.add('lightElem', 'lightText', 'lightBoxShadow')
       document.getElementById('headerContainer').classList.remove('darkElem', 'darkText', 'darkBoxShadow')
       document.getElementById('modeText').classList.add('moonLight')
@@ -102,6 +104,22 @@ class App extends Component {
       document.getElementById('searchIcon').classList.remove('searchIconDark')
       document.getElementById('searchInput').classList.add('lightElem', 'lightText', 'lightSearchInput')
       document.getElementById('searchInput').classList.remove('darkElem', 'darkText', 'darkSearchInput')
+      document.getElementById('regionHeader').classList.add('lightElem', 'lightText', 'lightBoxShadow')
+      document.getElementById('regionHeader').classList.remove('darkElem', 'darkText', 'darkBoxShadow')
+      document.getElementById('regionIcon').classList.add('regionIconLight')
+      document.getElementById('regionIcon').classList.remove('regionIconDark')
+      document.getElementById('regionOptions').classList.add('lightElem', 'lightText', 'lightBoxShadow')
+      document.getElementById('regionOptions').classList.remove('darkElem', 'darkText', 'darkBoxShadow')
+
+      document.querySelectorAll('.flagContainer').forEach( item => {
+        item.classList.add('lightBoxShadow')
+        item.classList.remove('darkBoxShadow')
+      } )
+
+      document.querySelectorAll('.countryInfoContainer').forEach( item => {
+        item.classList.add('lightElem', 'lightText', 'lightBoxShadow')
+        item.classList.remove('darkElem', 'darkText', 'darkBoxShadow')
+      } )
       this.setState({
         isDark: true
       })
@@ -109,6 +127,8 @@ class App extends Component {
       console.log("dark")
       document.getElementById('mainContainer').classList.add('darkBg')
       document.getElementById('mainContainer').classList.remove('lightBg')
+      document.getElementById('detailsContainer').classList.add('darkBg')
+      document.getElementById('detailsContainer').classList.remove('lightBg')
       document.getElementById('headerContainer').classList.add('darkElem', 'darkText', 'darkBoxShadow')
       document.getElementById('headerContainer').classList.remove('lightElem', 'lightText', 'lightBoxShadow')
       document.getElementById('modeText').classList.add('moonDark')
@@ -119,6 +139,22 @@ class App extends Component {
       document.getElementById('searchIcon').classList.remove('searchIconLight')
       document.getElementById('searchInput').classList.add('darkElem', 'darkText', 'darkSearchInput')
       document.getElementById('searchInput').classList.remove('lightElem', 'lightText', 'lightSearchInput')
+      document.getElementById('regionHeader').classList.add('darkElem', 'darkText', 'darkBoxShadow')
+      document.getElementById('regionHeader').classList.remove('lightElem', 'lightText', 'lightBoxShadow')
+      document.getElementById('regionIcon').classList.add('regionIconDark')
+      document.getElementById('regionIcon').classList.remove('regionIconLight')
+      document.getElementById('regionOptions').classList.add('darkElem', 'darkText', 'darkBoxShadow')
+      document.getElementById('regionOptions').classList.remove('lightElem', 'lightText', 'lightBoxShadow')
+
+      document.querySelectorAll('.flagContainer').forEach( item => {
+        item.classList.add('darkBoxShadow')
+        item.classList.remove('lightBoxShadow')
+      } )
+
+      document.querySelectorAll('.countryInfoContainer').forEach( item => {
+        item.classList.add('darkElem', 'darkText', 'darkBoxShadow')
+        item.classList.remove('lightElem', 'lightText', 'lightBoxShadow')
+      } )
       this.setState({
         isDark: false
       })
