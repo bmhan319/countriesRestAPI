@@ -5,7 +5,9 @@ import Countries from './Countries'
 
 class Main extends Component {
   componentDidMount() {
-    this.props.callApi('all','')
+    window.onload = () => {
+      this.props.callApi('all','')
+    }
     this.props.changeStatePage('main')
     this.props.loadDayImages()
   }
