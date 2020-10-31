@@ -2,11 +2,6 @@ import React, {Component} from 'react'
 import {NavLink} from 'react-router-dom'
 
 class Details extends Component {
-  componentDidMount() {
-    this.props.location.changeStatePage('details')
-    this.props.location.changeDetailsMode( !(this.props.location.state.isDark) )
-  }
-
   getLanguages = () => {
     const country = this.props.location.countryData
     let languages = []
@@ -65,7 +60,7 @@ class Details extends Component {
                 countryData: border[1],
                 state: this.props.location.state
               }}>
-                <div className="borderCountry darkElem darkText darkBoxShadow'">{border[0]}</div>
+                <div className="borderCountry darkElem darkText darkBoxShadow">{border[0]}</div>
               </NavLink>
             ))}
           </div>

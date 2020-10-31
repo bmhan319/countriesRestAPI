@@ -12,6 +12,7 @@
   --DarkElem: hsl(209, 23%, 22%); 
   --DarkBg: hsl(207, 26%, 17%);
   --DarkText: hsl(0, 0%, 100%);
+  --DarkInput: #000;
   --LightElem: hsl(0, 0%, 100%);
   --LightBG: hsl(0, 0%, 98%); 
   --LightText: hsl(200, 15%, 8%);
@@ -45,30 +46,14 @@ img {
   background-color: var(--DarkElem);
 }
 
-.lightElem {
-  background-color: var(--LightElem);
-}
-
 .darkBg {
   background-color: var(--DarkBg);
-}
-
-.lightBg {
-  background-color: var(--LightBg);
 }
 
 .darkText {
   color: var(--DarkText);
 }
 
-.lightText {
-  color: var(--LightText);
-}
-
 .darkBoxShadow {
-  box-shadow: 0 0 24px -14px #000;
-}
-
-.lightBoxShadow {
-  box-shadow: 0 0 10px -4px var(--LightInput);
+  box-shadow: 0 0 10px -4px var(--DarkInput);
 }
