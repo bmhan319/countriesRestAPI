@@ -16,7 +16,9 @@ class Main extends Component {
           <Search  inputSearch={this.props.handleSearchInput} inputSubmit={this.props.handleInputSubmit} />
           <Region filterSubmit={this.props.handleFilterSubmit} filter={this.props.filterExpand} />
         </div>
-        <Countries state={this.props.parentState} changeStatePage={this.props.changeStatePage}/>
+        <Countries  state={this.props.parentState} 
+                    changeStatePage={this.props.changeStatePage} 
+                    changeDetailsMode={this.props.changeDetailsMode}/>
       </div>
     )
   }

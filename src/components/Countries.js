@@ -11,6 +11,7 @@ export default function Countries(props) {
               pathname: '/details',
               countryData: country,
               changeStatePage: props.changeStatePage,
+              changeDetailsMode: props.changeDetailsMode,
               state: props.state
 
             }}>

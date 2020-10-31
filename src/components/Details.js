@@ -1,12 +1,10 @@
 import React, {Component} from 'react'
 import {NavLink} from 'react-router-dom'
-import ArrowDark from '../img/arrow-left-dark.svg'
-import ArrowLight from '../img/arrow-left-light.svg'
 
 class Details extends Component {
   componentDidMount() {
     this.props.location.changeStatePage('details')
-    console.log(this.props.location.state)
+    this.props.location.changeDetailsMode( !(this.props.location.state.isDark) )
   }
 
   getLanguages = () => {
