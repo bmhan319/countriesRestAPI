@@ -164,7 +164,7 @@ class App extends Component {
                                                     handleInputSubmit={this.handleInputSubmit}
                                                     changeStatePage={this.changeStatePage}
                                                     loadDayImages={this.loadDayImages}
-                                                    callApi={this.callApi} />} />
+                                                    callApi={this.callApi} />} />                              
           <Route path='/details' component={Details} />
         </Switch>
       </div>

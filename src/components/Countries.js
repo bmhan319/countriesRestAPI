@@ -12,6 +12,7 @@ export default function Countries(props) {
               countryData: country,
               changeStatePage: props.changeStatePage,
               loadDayImages: props.loadDayImages,
+              callApi: props.callApi,
               state: props.state
 
             }}>
