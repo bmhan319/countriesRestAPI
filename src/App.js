@@ -40,7 +40,7 @@ class App extends Component {
     this.setState({
       filterOpen: false
     })
-    this.callApi('region/', region)
+    this.callApi(region)
   }
 
   handleSearchInput = (e) => {
@@ -56,12 +56,12 @@ class App extends Component {
     if (this.state.searchValue === "" ) {
       this.errorMessage()
     } else {
-      this.callApi('name/', this.state.searchValue)
+      this.callApi(`name/${this.state.searchValue}`)
     }
   }
 
-  callApi = async (type, val) => {
-    const link = 'https://restcountries.eu/rest/v2/' + type + val
+  callApi = async (val) => {
+    const link = 'https://restcountries.eu/rest/v2/' + val
     const linkAll = 'https://restcountries.eu/rest/v2/all'
     const callAll = await fetch(linkAll)
     const dataAll = await callAll.json()

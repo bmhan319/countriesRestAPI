@@ -11,11 +11,12 @@ export default function Region(props) {
         </div>
 
         <ul id="regionOptions" className="regionOptions darkElem darkText darkBoxShadow">
-          <li className="region africa" onClick={ ()=>props.filterSubmit('africa') }>Africa</li>
-          <li className="region america" onClick={ ()=>props.filterSubmit('americas') }>America</li>
-          <li className="region asia" onClick={ ()=>props.filterSubmit('asia') }>Asia</li>
-          <li className="region europe" onClick={ ()=>props.filterSubmit('europe') }>Europe</li>
-          <li className="region oceania" onClick={ ()=>props.filterSubmit('oceania') }>Oceania</li>
+          <li className="region all" onClick={ ()=>props.filterSubmit('all') }>All</li>
+          <li className="region africa" onClick={ ()=>props.filterSubmit('region/africa') }>Africa</li>
+          <li className="region america" onClick={ ()=>props.filterSubmit('region/americas') }>America</li>
+          <li className="region asia" onClick={ ()=>props.filterSubmit('region/asia') }>Asia</li>
+          <li className="region europe" onClick={ ()=>props.filterSubmit('region/europe') }>Europe</li>
+          <li className="region oceania" onClick={ ()=>props.filterSubmit('region/oceania') }>Oceania</li>
         </ul>
         
       </div>
