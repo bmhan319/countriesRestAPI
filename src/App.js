@@ -15,7 +15,8 @@ class App extends Component {
     filterOpen: false,
     countries: [],
     countriesAll:[],
-    searchValue: ""
+    searchValue: "",
+    page:'main'
   }
 
   filterExpand = () => {
@@ -98,7 +99,17 @@ class App extends Component {
       this.setState({
         isDark: false
       })
-    } else {
+      if (this.state.page === 'main') {
+        document.getElementById('searchIcon').classList.add('searchIconLight')
+        document.getElementById('searchIcon').classList.remove('searchIconDark')
+        document.getElementById('regionIcon').classList.add('regionIconLight')
+        document.getElementById('regionIcon').classList.remove('regionIconDark')
+      }
+      if (this.state.page === 'details') {
+        document.getElementById('leftArrow').classList.add('leftArrowLight')
+        document.getElementById('leftArrow').classList.remove('leftArrowDark')
+      }
+    } else if (this.state.isDark === false){
       document.documentElement.style.setProperty('--DarkElem', 'hsl(209, 23%, 22%)')
       document.documentElement.style.setProperty('--DarkBg', 'hsl(207, 26%, 17%)')
       document.documentElement.style.setProperty('--DarkText', 'hsl(0, 0%, 100%)')
@@ -108,7 +119,37 @@ class App extends Component {
       this.setState({
         isDark: true
       })
+      if (this.state.page === 'main') {
+        document.getElementById('searchIcon').classList.add('searchIconDark')
+        document.getElementById('searchIcon').classList.remove('searchIconLight')
+        document.getElementById('regionIcon').classList.add('regionIconDark')
+        document.getElementById('regionIcon').classList.remove('regionIconLight')
+      }
+      if (this.state.page === 'details') {
+        document.getElementById('leftArrow').classList.add('leftArrowDark')
+        document.getElementById('leftArrow').classList.remove('leftArrowLight')
+      }
     } 
+  }
+
+  loadDayImages = () => {
+    if (this.state.isDark === false) {
+      if (this.state.page === 'details') {
+        document.getElementById('searchIcon').classList.add('searchIconLight')
+        document.getElementById('searchIcon').classList.remove('searchIconDark')
+        document.getElementById('regionIcon').classList.add('regionIconLight')
+        document.getElementById('regionIcon').classList.remove('regionIconDark')
+      } else if (this.state.page === 'main') {
+        document.getElementById('leftArrow').classList.add('leftArrowLight')
+        document.getElementById('leftArrow').classList.remove('leftArrowDark')
+      }
+    }
+  }
+
+  changeStatePage = (name) => {
+    this.setState({
+      page: name
+    })
   }
 
   render() {
@@ -122,6 +163,7 @@ class App extends Component {
                                                     handleSearchInput={this.handleSearchInput}
                                                     handleInputSubmit={this.handleInputSubmit}
                                                     changeStatePage={this.changeStatePage}
+                                                    loadDayImages={this.loadDayImages}
                                                     callApi={this.callApi} />} />
           <Route path='/details' component={Details} />
         </Switch>

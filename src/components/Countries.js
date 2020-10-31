@@ -10,6 +10,8 @@ export default function Countries(props) {
             <NavLink className="countryLink" to={{
               pathname: '/details',
               countryData: country,
+              changeStatePage: props.changeStatePage,
+              loadDayImages: props.loadDayImages,
               state: props.state
 
             }}>

@@ -2,6 +2,11 @@ import React, {Component} from 'react'
 import {NavLink} from 'react-router-dom'
 
 class Details extends Component {
+  componentDidMount() {
+    this.props.location.changeStatePage('details')
+    this.props.location.loadDayImages()
+  }
+
   getLanguages = () => {
     const country = this.props.location.countryData
     let languages = []
