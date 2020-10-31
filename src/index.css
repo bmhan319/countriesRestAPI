@@ -57,3 +57,16 @@ img {
 .darkBoxShadow {
   box-shadow: 0 0 10px -4px var(--DarkInput);
 }
+
+.inputContainer {
+    padding: 0 16px;
+  }
+
+@media screen and (min-width: 600px) { 
+  .inputContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 80px;
+  }
+}

@@ -1,5 +1,5 @@
 .searchContainer {
-  padding: 24px 16px;
+  padding: 24px 0px;
 }
 
 .searchForm {
@@ -78,4 +78,23 @@
     /*use inset box-shadow to cover background-color*/
     -webkit-text-fill-color: var(--LightText) !important;
     /*use text fill color to cover font color*/
+}
+
+
+@media screen and (min-width: 600px) { 
+  .searchContainer {
+    width: 476px;
+  }
+
+  .searchForm {
+    height: 56px;
+  }
+
+  .searchIcon {
+    background-size: 1.25em;
+  }
+
+  .searchInput {
+    font-size: 1.05em;
+  }
 }

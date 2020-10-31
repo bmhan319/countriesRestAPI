@@ -1,5 +1,5 @@
 .regionContainer {
-  padding: 16px;
+  padding: 16 0 px;
 }
 
 .regionForm {
@@ -62,4 +62,21 @@
 .region:hover {
   color: var(--LightInput);
   cursor: pointer;
+}
+
+@media screen and (min-width: 600px) { 
+  .regionForm {
+    width: 200px;
+    height: 56px;
+    min-width: auto;
+  }
+
+  .regionHeader {
+    font-size: 1em;
+    padding: 18px 24px;
+  }
+
+  .regionIcon {
+    background-size: 90%;
+  }
 }

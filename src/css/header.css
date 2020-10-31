@@ -36,3 +36,31 @@
 .moonLight::before {
   background-image: url('./../img/moon-outline.svg');
 }
+
+@media screen and (min-width: 600px) {
+  .headerContainer {
+    padding: 24px 80px;
+  }
+
+  .headerTitle {
+    font-size: 1.65em;
+    letter-spacing: .9px;
+  }
+
+  .modeText {
+    position: relative;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+
+  .modeText::before {
+    position: absolute;
+    background-repeat: no-repeat;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: -24px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
