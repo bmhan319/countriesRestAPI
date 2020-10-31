@@ -3,6 +3,8 @@ import {Route, Switch} from 'react-router-dom'
 import Header from './components/Header'
 import Main from './components/Main'
 import Details from './components/Details'
+import ArrowDark from './img/arrow-left-dark.svg'
+import ArrowLight from './img/arrow-left-light.svg'
 import './css/header.css'
 import './css/details.css'
 import './css/search.css'
@@ -168,6 +170,23 @@ class App extends Component {
         console.log("light")
         document.getElementById('detailsContainer').classList.add('lightBg')
         document.getElementById('detailsContainer').classList.remove('darkBg')
+        document.getElementById('headerContainer').classList.add('lightElem', 'lightText', 'lightBoxShadow')
+        document.getElementById('headerContainer').classList.remove('darkElem', 'darkText', 'darkBoxShadow')
+        document.getElementById('modeText').classList.add('moonLight')
+        document.getElementById('modeText').classList.remove('moonDark')
+        document.getElementById('backButton').classList.add('lightElem', 'lightText', 'lightBoxShadow')
+        document.getElementById('backButton').classList.remove('darkElem', 'darkText', 'darkBoxShadow')
+        document.getElementById('leftArrow').classList.add('leftArrowLight')
+        document.getElementById('leftArrow').classList.remove('leftArrowDark')
+        document.getElementById('detailsFlagImg').classList.add('lightBoxShadow')
+        document.getElementById('detailsFlagImg').classList.remove('darkBoxShadow')
+        document.getElementById('detailsCountryInfoContainer').classList.add('lightText')
+        document.getElementById('detailsCountryInfoContainer').classList.remove('darkText')
+
+        document.querySelectorAll('.borderCountry').forEach( item => {
+          item.classList.add('lightElem', 'lightText', 'lightBoxShadow')
+          item.classList.remove('darkElem', 'darkText', 'darkBoxShadow')
+        } )
         this.setState({
           isDark: true
         })
@@ -175,6 +194,23 @@ class App extends Component {
         console.log("dark")
         document.getElementById('detailsContainer').classList.add('darkBg')
         document.getElementById('detailsContainer').classList.remove('lightBg')
+        document.getElementById('headerContainer').classList.add('darkElem', 'darkText', 'darkBoxShadow')
+        document.getElementById('headerContainer').classList.remove('lightElem', 'lightText', 'lightBoxShadow')
+        document.getElementById('modeText').classList.add('moonDark')
+        document.getElementById('modeText').classList.remove('moonLight')
+        document.getElementById('backButton').classList.add('darkElem', 'darkText', 'darkBoxShadow')
+        document.getElementById('backButton').classList.remove('lightElem', 'lightText', 'lightBoxShadow')
+        document.getElementById('leftArrow').classList.add('leftArrowDark')
+        document.getElementById('leftArrow').classList.remove('leftArrowLight')
+        document.getElementById('detailsFlagImg').classList.add('darkBoxShadow')
+        document.getElementById('detailsFlagImg').classList.remove('lightBoxShadow')
+        document.getElementById('detailsCountryInfoContainer').classList.add('darkText')
+        document.getElementById('detailsCountryInfoContainer').classList.remove('lightText')
+        
+        document.querySelectorAll('.borderCountry').forEach( item => {
+          item.classList.add('darkElem', 'darkText', 'darkBoxShadow')
+          item.classList.remove('lightElem', 'lightText', 'lightBoxShadow')
+        } )
         this.setState({
           isDark: false
         })

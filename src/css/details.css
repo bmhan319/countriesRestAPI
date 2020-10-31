@@ -9,10 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--DarkBlue);
-  color: var(--White);
-  border: 0;
-  box-shadow: 0 0 24px -8px #000;
+  border: 0; 
   border-radius: 2px;
   cursor: pointer;
   outline: none;
@@ -29,19 +26,27 @@
 
 .leftArrow {
   margin-right: 8px;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.leftArrowDark {
+  background-image: url('../img/arrow-left-dark.svg');
+}
+
+.leftArrowLight {
+  background-image: url('../img/arrow-left-light.svg');
 }
 
 .detailsFlagContainer {
   padding: 24px 24px 38px;
-  bordeR: 1px solid transparent;
+  border: 1px solid transparent;
 }
 
 .detailsFlagImg {
   width: 100%;
-}
-
-.detailsCountryInfoContainer {
-  color: var(--White);
 }
 
 .detailsCountryInfoContainer {
@@ -73,7 +78,7 @@
 
 .detailsBorderName {
   font-size: 1.10em;
-  font-weight: 300;
+  font-weight: 600;
   margin-bottom: 16px;
 }
 
@@ -85,12 +90,9 @@
 
 .borderCountry {
   height: 30px;
-  background-color: var(--DarkBlue);
-  color: var(--White);
   margin: 0 8px 8px 0;
   padding: 7px 24px;
   font-size: .8em;
-  box-shadow: 0 0 24px -8px #000;
   border-radius: 2px;
   outline: none;
 }

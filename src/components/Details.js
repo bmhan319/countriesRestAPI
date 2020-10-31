@@ -1,10 +1,12 @@
 import React, {Component} from 'react'
 import {NavLink} from 'react-router-dom'
-import Arrow from '../img/arrow-left.svg'
+import ArrowDark from '../img/arrow-left-dark.svg'
+import ArrowLight from '../img/arrow-left-light.svg'
 
 class Details extends Component {
   componentDidMount() {
     this.props.location.changeStatePage('details')
+    console.log(this.props.location.state)
   }
 
   getLanguages = () => {
@@ -37,15 +39,15 @@ class Details extends Component {
 
         <div className="backButtonContainer">
           <NavLink className="backButtonLink" to='/'>
-            <button className="backButton"><img className="leftArrow" src={Arrow} alt="left-arrow" />Back</button>
+            <button id="backButton" className="backButton darkElem darkText darkBoxShadow"><span id="leftArrow" className="leftArrow leftArrowDark"></span>Back</button>
           </NavLink>
         </div>
 
         <div className="detailsFlagContainer">
-          <img className="detailsFlagImg" src={country.flag} alt={country.flag} />
+          <img id="detailsFlagImg" className="detailsFlagImg darkBoxShadow" src={country.flag} alt={country.flag} />
         </div>
 
-        <div className="detailsCountryInfoContainer">
+        <div id="detailsCountryInfoContainer" className="detailsCountryInfoContainer darkText">
           <h2 className="detailsCountryName">{country.name}</h2>
           <p className="detailsCountryText"><span className="detailsCountrySubject">Native Name: </span>{ (country.nativeName).toLocaleString() }</p>
           <p className="detailsCountryText"><span className="countrySubject">Population: </span>{ (country.population).toLocaleString() }</p>
@@ -65,7 +67,7 @@ class Details extends Component {
                 countryData: border[1],
                 state: this.props.location.state
               }}>
-                <div className="borderCountry">{border[0]}</div>
+                <div className="borderCountry darkElem darkText darkBoxShadow'">{border[0]}</div>
               </NavLink>
             ))}
           </div>
