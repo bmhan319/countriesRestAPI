@@ -34,6 +34,7 @@
 
 body {
   width: 100%;
+  background-color: var(--DarkInput);
   font-family: 'Nunito Sans', sans-serif;
   font-size: var(--MainSize);
 }
@@ -63,6 +64,11 @@ img {
   }
 
 @media screen and (min-width: 600px) { 
+  .App {
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+
   .inputContainer {
     display: flex;
     justify-content: space-between;
