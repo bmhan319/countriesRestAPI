@@ -40,8 +40,12 @@
   background-image: url('../img/arrow-left-light.svg');
 }
 
+.countryDataContainer {
+  padding: 0 24px;
+}
+
 .detailsFlagContainer {
-  padding: 24px 24px 38px;
+  padding: 24px 0px 38px;
   border: 1px solid transparent;
 }
 
@@ -50,7 +54,6 @@
 }
 
 .detailsCountryInfoContainer {
-  padding:0 24px; 
   border: 2px solid transparent;
 }
 
@@ -108,4 +111,75 @@
 
 .countryLink:focus > .borderCountry {
   border: 1px dotted var(--White);
+}
+
+@media screen and (min-width: 600px) {
+  .detailsContainer {
+    height: calc(100vh - 80px);
+  }
+
+  .backButtonContainer {
+    padding: 80px;
+  }
+
+  .backButton {
+    height: 40px;
+    width: 136px;
+    border-radius: 6px;
+  }
+
+  .countryDataContainer {
+    padding: 0 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .detailsFlagContainer {
+    padding-top: 0;
+    width: 45%;
+  }
+
+  .detailsCountryInfoContainer {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .detailsCountryName {
+    margin-bottom: 23px;
+    font-size: 2.3em;
+  }
+
+  .detailsTextContainer {
+    display: flex;
+  }
+
+  .detailsTextCol1 {
+    width: 50%;
+  }
+
+  .detailsTextCol2 {
+    width: 50%;
+  }
+
+  .detailsBorderWrapper {
+    margin: 40px 0;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .detailsBorderName {
+    width: 200px;
+    padding: 0 8px 0 0;
+    margin: 0;
+  } 
+
+  .detailsBorderContainer {
+    margin: 0;
+  }
+  
+  .borderCountry {
+    margin: 0 8px 8px 0;
+  }
 }
