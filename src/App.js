@@ -155,6 +155,22 @@ class App extends Component {
     }
   }
 
+  //enables dark mode element to be clicked
+  darkModeKeyBoard = (e) => {
+    if (e.keyCode === 13) {
+      e.preventDefault()  
+      document.getElementById('modeText').click()
+    }
+  }
+
+  //enables region element to be clicked
+  regionKeyBoard = (e) => {
+    if (e.keyCode === 13) {
+      e.preventDefault()  
+      document.getElementById('regionHeader').click()
+    }
+  }
+
   //adjusts the state to the name of the page user is on
   changeStatePage = (name) => {
     this.setState({
@@ -165,7 +181,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header darkMode={this.darkModeToggle} />
+        <Header darkModeKeyBoard={this.darkModeKeyBoard} darkMode={this.darkModeToggle} />
         <Switch>
           <Route exact path='/' render={()=> <Main  parentState={this.state} 
                                                     filterExpand={this.filterExpand}
@@ -174,6 +190,7 @@ class App extends Component {
                                                     handleInputSubmit={this.handleInputSubmit}
                                                     changeStatePage={this.changeStatePage}
                                                     loadDayImages={this.loadDayImages}
+                                                    regionKeyBoard={this.regionKeyBoard}
                                                     callApi={this.callApi} />} />                              
           <Route path='/details' component={Details} />
         </Switch>

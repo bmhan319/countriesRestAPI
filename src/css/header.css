@@ -17,12 +17,12 @@
   font-size: .85em;
   cursor: pointer;
   outline: none;
+  padding: 0 3px;
 }
 
 .modeText:focus {
   border: 1px dotted var(--DarkText);
   border-radius: 4px;
-  padding: 0 2px;
 }
 
 .modeText::before {

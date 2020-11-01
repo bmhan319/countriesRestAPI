@@ -3,7 +3,7 @@ import React from 'react'
 export default function Region(props) {
   return (
     <div className="regionContainer">
-      <div className="regionForm" tabindex="0">
+      <div id="regionForm" className="regionForm" tabIndex="0" onKeyUp={props.regionKeyBoard}>
 
         <div id="regionHeader" className="regionHeader darkElem darkText darkBoxShadow" onClick={props.filter} >
           <p className="regionTitle">Filter by Region</p>

@@ -19,10 +19,16 @@ class Main extends Component {
     return (
       <div id="mainContainer" className="darkBg">
         <div className="inputContainer">
-          <Search  inputSearch={this.props.handleSearchInput} inputSubmit={this.props.handleInputSubmit} />
-          <Region filterSubmit={this.props.handleFilterSubmit} filter={this.props.filterExpand} />
+          <Search   inputSearch={this.props.handleSearchInput} 
+                    inputSubmit={this.props.handleInputSubmit} />
+          <Region   filterSubmit={this.props.handleFilterSubmit} 
+                    filter={this.props.filterExpand} 
+                    regionKeyBoard={this.props.regionKeyBoard}/>
         </div>
-        <Countries  state={this.props.parentState}  callApi={this.props.callApi} changeStatePage={this.props.changeStatePage} loadDayImages={this.props.loadDayImages}/>
+        <Countries  state={this.props.parentState}  
+                    callApi={this.props.callApi} 
+                    changeStatePage={this.props.changeStatePage} 
+                    loadDayImages={this.props.loadDayImages}/>
       </div>
     )
   }
