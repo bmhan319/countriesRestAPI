@@ -51,6 +51,7 @@
 
 .detailsFlagImg {
   width: 100%;
+  max-width: 400px;
 }
 
 .detailsCountryInfoContainer {
@@ -113,7 +114,7 @@
   border: 1px dotted var(--White);
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 900px) {
   .detailsContainer {
     height: calc(100vh - 80px);
   }
@@ -135,8 +136,12 @@
   }
 
   .detailsFlagContainer {
-    padding-top: 0;
+    padding: 10px 0;
     width: 45%;
+  }
+
+  .detailsFlagImg {
+    max-width: 1000px;
   }
 
   .detailsCountryInfoContainer {
@@ -152,7 +157,7 @@
   }
 
   .detailsTextContainer {
-    display: flex;
+    display: block;
   }
 
   .detailsTextCol1 {
@@ -164,7 +169,7 @@
   }
 
   .detailsBorderWrapper {
-    margin: 40px 0;
+    margin: 40px 0 0;
     display: flex;
     align-items: flex-start;
   }
@@ -181,5 +186,12 @@
   
   .borderCountry {
     margin: 0 8px 8px 0;
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .detailsTextContainer {
+    display: flex;
   }
 }
