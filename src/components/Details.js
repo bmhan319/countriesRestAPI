@@ -3,10 +3,12 @@ import {NavLink} from 'react-router-dom'
 
 class Details extends Component {
   componentDidMount() {
+    //change state to current page, then that is used to load correct day/night icons
     this.props.location.changeStatePage('details')
     this.props.location.loadDayImages()
   }
 
+  //used to gather all languages for a particular country to display on details page
   getLanguages = () => {
     const country = this.props.location.countryData
     let languages = []
@@ -16,6 +18,7 @@ class Details extends Component {
     return languages.join(', ')
   }
 
+  //used to gather all border countries for a particular coiuntry and display on page
   addBorderCountries = () => {
     const country = this.props.location.countryData.borders
     const countryAll = this.props.location.state.countriesAll

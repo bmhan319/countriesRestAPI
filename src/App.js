@@ -19,6 +19,7 @@ class App extends Component {
     page:'main'
   }
 
+  //used to expand the 'Region Filter' menu
   filterExpand = () => {
     const element = document.querySelector('.regionOptions').style
     if (this.state.filterOpen === false) {
@@ -34,6 +35,7 @@ class App extends Component {
     }
   }
 
+  //used to invoke API call function to gather user selected data and close menu
   handleFilterSubmit = (region) => {
     this.errorReset()
     document.querySelector('.regionOptions').style = "none"
@@ -43,6 +45,7 @@ class App extends Component {
     this.callApi(region)
   }
 
+  //takes user typed input and puts it into state
   handleSearchInput = (e) => {
     e.preventDefault()
     this.setState({
@@ -50,6 +53,7 @@ class App extends Component {
     })
   }
 
+  //used to invoke API call function to gather user input data with error handling for empty field
   handleInputSubmit = (e) => {
     this.errorReset()
     e.preventDefault()
@@ -60,6 +64,7 @@ class App extends Component {
     }
   }
 
+  //calls restcountries api for data with 404 error check
   callApi = async (val) => {
     const link = 'https://restcountries.eu/rest/v2/' + val
     const linkAll = 'https://restcountries.eu/rest/v2/all'
@@ -78,16 +83,19 @@ class App extends Component {
     }
   }
 
+  //UI styling for error from the api call
   errorMessage = () => {
     document.querySelector('.searchForm').style.border = "1px solid red"
     document.getElementById('searchContainer').classList.add("formAfter")
   }
 
+  //turns off UI styling for api calls for error
   errorReset = () => {
     document.querySelector('.searchForm').style.border = "0"
     document.getElementById('searchContainer').classList.remove("formAfter")
   }
 
+  //toggles on/off dark mode
   darkModeToggle = () => {
     if (this.state.isDark === true) {
       document.documentElement.style.setProperty('--DarkElem', 'hsl(0, 0%, 100%)')
@@ -132,6 +140,7 @@ class App extends Component {
     } 
   }
 
+  //toggles on/off light mode icons across both pages
   loadDayImages = () => {
     if (this.state.isDark === false) {
       if (this.state.page === 'details') {
@@ -146,6 +155,7 @@ class App extends Component {
     }
   }
 
+  //adjusts the state to the name of the page user is on
   changeStatePage = (name) => {
     this.setState({
       page: name

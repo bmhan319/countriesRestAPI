@@ -5,9 +5,12 @@ import Countries from './Countries'
 
 class Main extends Component {
   componentDidMount() {
+    //used to call up all api data to populate main page on first load
     window.onload = () => {
       this.props.callApi('all')
     }
+
+    //change state to current page, then that is used to load correct day/night icons
     this.props.changeStatePage('main')
     this.props.loadDayImages()
   }
