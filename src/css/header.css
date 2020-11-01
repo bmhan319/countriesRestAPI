@@ -16,6 +16,13 @@
   position: relative;
   font-size: .85em;
   cursor: pointer;
+  outline: none;
+}
+
+.modeText:focus {
+  border: 1px dotted var(--DarkText);
+  border-radius: 4px;
+  padding: 0 2px;
 }
 
 .modeText::before {

@@ -16,11 +16,11 @@
 }
 
 .backButton:focus {
-  border: 1px dotted var(--White);
+  border: 1px dotted var(--DarkText);
 }
 
 .backButtonLink {
-  text-decoration: none;
+  text-decoration: none;        
   outline: none;
 }
 
@@ -111,7 +111,8 @@
 }
 
 .countryLink:focus > .borderCountry {
-  border: 1px dotted var(--White);
+  border: 1px dotted var(--DarkText);
+  border-radius: 2px;
 }
 
 @media screen and (min-width: 900px) {

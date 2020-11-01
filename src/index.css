@@ -63,10 +63,6 @@ img {
     padding: 0 16px;
   }
 
-@media screen and (min-width: 450px) {
-
-}
-
 
 @media screen and (min-width: 720px) { 
   .App {

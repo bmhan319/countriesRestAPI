@@ -10,10 +10,16 @@
 
 .countryItem {
   margin-bottom: 32px;
+  height: 100%;
 }
 
 .countryLink {  
   text-decoration: none;
+}
+
+.countryItem:focus-within {
+  border: 1px dotted var(--DarkText);
+  border-radius: 6px;
 }
 
 .flagImg {
